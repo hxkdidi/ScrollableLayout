@@ -47,7 +47,7 @@ public class ScrollableHelper {
     public boolean isTop() {
         View scrollableView = getScrollableView();
         if (scrollableView == null) {
-            return false;
+            return true;//解决程序崩溃之后重新进入无法解除吸附，导致下拉时头部无法出来的bug
         }
         if (scrollableView instanceof AdapterView) {
             return isAdapterViewTop((AdapterView) scrollableView);
